@@ -12,7 +12,6 @@ interface ChartContainerProps {
     | "line"
     | "area"
     | "bar"
-    | "histogram"
     | "pie"
     | "donut"
     | "radialBar"

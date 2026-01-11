@@ -111,7 +111,6 @@ export default async function TotalDbPage(props: PropsType) {
               key: "division",
               header: "Division",
               sortable: true,
-              renderType: "division",
             },
             { key: "location", header: "Location", sortable: true },
             {
@@ -123,7 +122,7 @@ export default async function TotalDbPage(props: PropsType) {
               key: "loyaltyStatus",
               header: "Loyalty",
               sortable: true,
-              renderType: "loyalty",
+              renderType: "status",
             },
             {
               key: "signupDate",

@@ -201,79 +201,72 @@ export function ArrowLeftIcon({ isActive, ...props }: IconProps) {
 }
 
 // Iconly Icons with active state support
-export function OverviewIcon({ isActive, ...props }: IconProps) {
+export function OverviewIcon({ isActive }: IconProps) {
   return (
     <Chart
       set={isActive ? "bulk" : "light"}
       size={24}
       primaryColor="currentColor"
-      {...props}
     />
   );
 }
 
-export function DatabaseIcon({ isActive, ...props }: IconProps) {
+export function DatabaseIcon({ isActive }: IconProps) {
   return (
     <Folder
       set={isActive ? "bulk" : "light"}
       size={24}
       primaryColor="currentColor"
-      {...props}
     />
   );
 }
 
-export function PromotionIcon({ isActive, ...props }: IconProps) {
+export function PromotionIcon({ isActive }: IconProps) {
   return (
     <Discount
       set={isActive ? "bulk" : "light"}
       size={24}
       primaryColor="currentColor"
-      {...props}
     />
   );
 }
 
-export function EventIcon({ isActive, ...props }: IconProps) {
+export function EventIcon({ isActive }: IconProps) {
   return (
     <CalendarIcon
       set={isActive ? "bulk" : "light"}
       size={24}
       primaryColor="currentColor"
-      {...props}
     />
   );
 }
 
-export function AnalyticsIcon({ isActive, ...props }: IconProps) {
+export function AnalyticsIcon({ isActive }: IconProps) {
   return (
     <Graph
       set={isActive ? "bulk" : "light"}
       size={24}
       primaryColor="currentColor"
-      {...props}
     />
   );
 }
 
-export function NotificationIcon({ isActive, ...props }: IconProps) {
+export function NotificationIcon({ isActive }: IconProps) {
   return (
     <NotificationIconly
       set={isActive ? "bulk" : "light"}
       size={24}
       primaryColor="currentColor"
-      {...props}
     />
   );
 }
 
-export function SettingsIcon({ isActive, ...props }: IconProps) {
+export function SettingsIcon({ isActive }: IconProps) {
   return (
     <Setting
       set={isActive ? "bulk" : "light"}
       size={24}
       primaryColor="currentColor"
-      {...props}
     />
   );
 }

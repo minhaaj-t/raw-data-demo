@@ -11,11 +11,12 @@ import {
   DateRangeFilter,
 } from "@/components/Filters";
 import { getTotalDbData } from "../fetch";
+import { Customer } from "@/lib/mock-data";
 
 export default function RetailPage() {
   const searchParams = useSearchParams();
   
-  const [customers, setCustomers] = useState([]);
+  const [customers, setCustomers] = useState<Customer[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
