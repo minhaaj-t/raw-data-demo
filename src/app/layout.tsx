@@ -12,11 +12,11 @@ import LayoutWrapper from "@/components/Layouts/LayoutWrapper";
 
 export const metadata: Metadata = {
   title: {
-    template: "%s | NextAdmin - Next.js Dashboard Kit",
-    default: "NextAdmin - Next.js Dashboard Kit",
+    template: "%s | RAW-DATA",
+    default: "RAW-DATA Dashboard",
   },
   description:
-    "Next.js admin dashboard toolkit with 200+ templates, UI components, and integrations for fast dashboard development.",
+    "RAW-DATA Business Intelligence Dashboard - Comprehensive customer analytics, promotions management, and business insights platform.",
 };
 
 export default function RootLayout({ children }: PropsWithChildren) {
