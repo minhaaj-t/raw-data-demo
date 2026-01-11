@@ -8,12 +8,6 @@
       "maxDuration": 30
     }
   },
-  "rewrites": [
-    {
-      "source": "/api/(.*)",
-      "destination": "/api/$1"
-    }
-  ],
   "headers": [
     {
       "source": "/(.*)",
@@ -32,9 +26,5 @@
         }
       ]
     }
-  ],
-  "images": {
-    "domains": ["images.unsplash.com"],
-    "formats": ["image/webp", "image/avif"]
-  }
+  ]
 }
