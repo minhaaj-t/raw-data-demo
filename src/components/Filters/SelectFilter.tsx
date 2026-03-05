@@ -12,7 +12,7 @@ interface SelectFilterOption {
 }
 
 interface SelectFilterProps {
-  options: SelectFilterOption[];
+  options: readonly SelectFilterOption[];
   paramKey: string;
   placeholder?: string;
   label?: string;

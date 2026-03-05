@@ -11,6 +11,12 @@ export const NAV_DATA = [
         items: [],
       },
       {
+        title: "Live Chat",
+        url: "/live-chat",
+        icon: Icons.LiveChatIcon,
+        items: [],
+      },
+      {
         title: "Total DB",
         icon: Icons.DatabaseIcon,
         items: [

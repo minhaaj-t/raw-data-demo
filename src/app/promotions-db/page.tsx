@@ -7,6 +7,7 @@ import {
   SelectFilter,
   DateRangeFilter,
 } from "@/components/Filters";
+import { BRANCH_OPTIONS } from "@/lib/filter-options";
 import { getTotalDbData } from "../total-db/fetch";
 import dayjs from "dayjs";
 import { cn } from "@/lib/utils";
@@ -106,6 +107,11 @@ export default async function PromotionsDbPage(props: PropsType) {
               { value: "active", label: "Active" },
               { value: "inactive", label: "Inactive" },
             ]}
+          />
+          <SelectFilter
+            paramKey="branch"
+            placeholder="All Branches"
+            options={BRANCH_OPTIONS}
           />
           <DateRangeFilter paramKey="dateRange" />
         </FilterBar>

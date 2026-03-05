@@ -2,6 +2,7 @@ import Breadcrumb from "@/components/Breadcrumbs/Breadcrumb";
 import { ChartContainer } from "@/components/ChartContainer";
 import { DataTable } from "@/components/DataTable";
 import { FilterBar, SelectFilter, DateRangeFilter } from "@/components/Filters";
+import { BRANCH_OPTIONS } from "@/lib/filter-options";
 import { getOverviewData } from "./fetch";
 import dayjs from "dayjs";
 import { cn, formatNumber } from "@/lib/utils";
@@ -170,6 +171,11 @@ export default async function OverviewPage() {
               { value: "food-factory", label: "Food Factory" },
               { value: "distribution", label: "Distribution" },
             ]}
+          />
+          <SelectFilter
+            paramKey="branch"
+            placeholder="All Branches"
+            options={BRANCH_OPTIONS}
           />
           <DateRangeFilter paramKey="dateRange" />
         </FilterBar>

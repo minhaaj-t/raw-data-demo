@@ -10,6 +10,7 @@ import {
   SelectFilter,
   DateRangeFilter,
 } from "@/components/Filters";
+import { BRANCH_OPTIONS } from "@/lib/filter-options";
 import { getTotalDbData } from "../fetch";
 import { Customer } from "@/lib/mock-data";
 import dayjs from "dayjs";
@@ -97,6 +98,11 @@ export default function DistributionPage() {
               { value: "active", label: "Active" },
               { value: "inactive", label: "Inactive" },
             ]}
+          />
+          <SelectFilter
+            paramKey="branch"
+            placeholder="All Branches"
+            options={BRANCH_OPTIONS}
           />
           <DateRangeFilter paramKey="dateRange" />
         </FilterBar>

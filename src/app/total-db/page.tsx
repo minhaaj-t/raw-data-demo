@@ -8,6 +8,7 @@ import {
   MultiSelectFilter,
   DateRangeFilter,
 } from "@/components/Filters";
+import { BRANCH_OPTIONS } from "@/lib/filter-options";
 import dayjs from "dayjs";
 import { cn } from "@/lib/utils";
 import { getTotalDbData } from "./fetch";
@@ -19,6 +20,7 @@ type PropsType = {
     nationality?: string;
     loyaltyStatus?: string;
     status?: string;
+    branch?: string;
     dateRange?: string;
   }>;
 };
@@ -95,6 +97,11 @@ export default async function TotalDbPage(props: PropsType) {
               { value: "active", label: "Active" },
               { value: "inactive", label: "Inactive" },
             ]}
+          />
+          <SelectFilter
+            paramKey="branch"
+            placeholder="All Branches"
+            options={BRANCH_OPTIONS}
           />
           <DateRangeFilter paramKey="dateRange" />
         </FilterBar>

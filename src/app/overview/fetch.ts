@@ -1,3 +1,4 @@
+import { apiGet, isApiConfigured } from "@/lib/api";
 import { generateMockCustomers } from "@/lib/mock-data";
 
 export interface OverviewData {
@@ -21,7 +22,32 @@ export interface OverviewData {
   newCustomers: number;
 }
 
+async function getOverviewFromApi(): Promise<OverviewData> {
+  const raw = await apiGet<{
+    totalCustomers: number;
+    revenueByDivision: { division: string; revenue: number; growth: number }[];
+    topLocations: { location: string; customers: number }[];
+    recentActivities: { id: string; type: string; description: string; date: string }[];
+    retentionRate: number;
+    newCustomers: number;
+  }>("/api/overview");
+  return {
+    ...raw,
+    recentActivities: (raw.recentActivities || []).map((a) => ({
+      ...a,
+      date: new Date(a.date),
+    })),
+  };
+}
+
 export async function getOverviewData(): Promise<OverviewData> {
+  if (isApiConfigured()) {
+    try {
+      return await getOverviewFromApi();
+    } catch {
+      // Fall through to mock on API error
+    }
+  }
   // Simulate API delay
   await new Promise((resolve) => setTimeout(resolve, 50)); // Reduced delay
 

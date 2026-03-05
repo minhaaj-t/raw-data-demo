@@ -7,6 +7,7 @@ import {
   SelectFilter,
   DateRangeFilter,
 } from "@/components/Filters";
+import { BRANCH_OPTIONS } from "@/lib/filter-options";
 import { generateMockEvents } from "@/lib/mock-data";
 
 type PropsType = {
@@ -16,6 +17,7 @@ type PropsType = {
     status?: string;
     eventCategory?: string;
     location?: string;
+    branch?: string;
     dateRange?: string;
   }>;
 };
@@ -42,7 +44,19 @@ export default async function EventsDbPage(props: PropsType) {
   const status = urlSearchParams.get("status");
   const eventCategory = urlSearchParams.get("eventCategory");
   const location = urlSearchParams.get("location");
+  const branch = urlSearchParams.get("branch");
   const dateRange = urlSearchParams.get("dateRange");
+
+  if (branch) {
+    const branchToLocation: Record<string, string> = {
+      "umm-salal": "Umm Salal",
+      wakhra: "Al Wakrah",
+      rayyan: "Al Rayyan",
+    };
+    if (branchToLocation[branch]) {
+      events = events.filter((e) => e.location === branchToLocation[branch]);
+    }
+  }
 
   if (search) {
     const searchLower = search.toLowerCase();
@@ -148,6 +162,11 @@ export default async function EventsDbPage(props: PropsType) {
               { value: "Villaggio Mall", label: "Villaggio Mall" },
               { value: "Mall of Qatar", label: "Mall of Qatar" },
             ]}
+          />
+          <SelectFilter
+            paramKey="branch"
+            placeholder="All Branches"
+            options={BRANCH_OPTIONS}
           />
           <DateRangeFilter paramKey="dateRange" />
         </FilterBar>
